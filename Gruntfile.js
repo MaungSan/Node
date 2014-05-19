@@ -278,18 +278,18 @@ module.exports = function (grunt) {
           ]
         },
 		{
-		  expand: true,
-		  dest: '<%= yeoman.dist %>',
-		  cwd: 'heroku',
-		  src: '*',
-		  rename: function (dest, src) {
-			  var path = require('path');
-			  if (src === 'distpackage.json') {
-				  return path.join(dest, 'package.json');
+			  expand: true,
+			  dest: '<%= yeoman.dist %>',
+			  cwd: 'heroku',
+			  src: '*',
+			  rename: function (dest, src) {
+				  var path = require('path');
+				  if (src === 'distpackage.json') {
+					  return path.join(dest, 'package.json');
+				  }
+				  return path.join(dest, src);
 			  }
-			  return path.join(dest, src);
 		  }
-	  }
 		, {
           expand: true,
           cwd: '.tmp/images',
